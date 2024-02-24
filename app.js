@@ -75,8 +75,11 @@ function checkAns(idx) {
         }
     }
     else {
-        h31.innerHTML = `Game Over! Refresh the page to play again.`;
-
+        if(level==1) h31.innerHTML = `Game Over! Refresh the page to play again.`;
+        else {
+            h31.innerHTML = `Oops! Press "START" to begin.`;
+            h32.innerHTML = "";
+        }
         if (level > 0) h32.innerHTML = `Score: ${level - 1}`;
         else h32.innerHTML = `Score: ${level}`;
         h32.style.marginTop = "0.5rem";
