@@ -7,8 +7,8 @@ let h32 = document.querySelector(".h32");
 let btn1 = document.querySelector("button");
 
 let level = 0;
-
 let started = false;
+
 btn1.addEventListener("click", function () {
     setTimeout(function () {
         h32.innerHTML = "";
@@ -18,9 +18,6 @@ btn1.addEventListener("click", function () {
         levelUp();
     }
 })
-
-
-
 
 function gameFlash(btn) {
     btn.classList.add("flash");
@@ -55,6 +52,10 @@ function levelUp() {
 
 let allBtns = document.querySelectorAll(".btn");
 
+for (btn of allBtns) {
+    btn.addEventListener("click", btnPress);
+}
+
 function btnPress() {
     let btn = this;
     userFlash(btn);
@@ -64,9 +65,6 @@ function btnPress() {
     checkAns(userSeq.length - 1);
 }
 
-for (btn of allBtns) {
-    btn.addEventListener("click", btnPress);
-}
 
 function checkAns(idx) {
     if (userSeq[idx] == gameSeq[idx]) {
